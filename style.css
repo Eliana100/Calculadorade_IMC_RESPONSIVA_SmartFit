@@ -8,7 +8,7 @@
 }
 body {
     height: 100vh;
-    background-image: url('/img/smartfit.png');
+    background-image: url('smartfit.png');
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
