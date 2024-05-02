@@ -17,20 +17,25 @@ form.addEventListener('submit', function(event){
     value.textContent = bmi.toFixed(2);
 
     let description = '';
+
+    value.classList.add('attention');
+
     document.getElementById('infos').classList.remove('hidden');
 
     if (bmi < 18.5) {
         description = 'Cuidado! Você está abaixo do peso! Podemos te ajudar com o ganho de massa, procure a Smart Fit mais próxima.';
     } else if (bmi >= 18.5 && bmi <= 25) {
-        description = ' Você esta no peso ideal!Para continuar assim e de forma saudavel, procure a Smart Fit mais próxima.';
+        description = ' Você está no peso ideal! Para continuar assim e de forma saudável, procure a Smart Fit mais próxima.';
+        value.classList.remove('attention');
+        value.classList.add('normal');
     } else if (bmi > 25 && bmi <= 30) {
-        description = 'Cuidado! Você esta com sobrepeso! Mas, podemos te ajudar com isso. Procure a Smart Fit mais próxima.';
+        description = 'Cuidado! Você está com sobrepeso! Mas, podemos te ajudar com isso. Procure a Smart Fit mais próxima.';
     } else if (bmi > 30 && bmi <= 35) {
-        description = 'Cuidado! Você esta com obesidade moderada! Procure um de nossos nutricionistas na Smart Fit mais próxima.';
+        description = 'Cuidado! Você está com obesidade moderada! Procure um de nossos nutricionistas na Smart Fit mais próxima.';
     } else if (bmi > 35 && bmi <= 40) {
-        description = 'Cuidado! Você esta com obesidade Severa! Procure um de nossos nutricionistas na Smart Fit mais próxima.';
+        description = 'Cuidado! Você está com obesidade Severa! Procure um de nossos nutricionistas na Smart Fit mais próxima.';
     } else {
-        description = 'Cuidado! Você esta com obesidade Morbida! Procure um de nossos nutricionistas na Smart Fit mais próxima.';
+        description = 'Cuidado! Você está com obesidade Morbida! Procure um de nossos nutricionistas na Smart Fit mais próxima.';
     }
 
     // Formatação do BMI como uma string antes de substituir o ponto por vírgula
@@ -39,7 +44,6 @@ form.addEventListener('submit', function(event){
 
     document.getElementById('description').textContent = description;
 });
-
 
 
 
